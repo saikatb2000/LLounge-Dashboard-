@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Looker Studio Dashboard & Report Summary</title>
     <style>
-        /* Reset styling */
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +13,6 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Main container styling */
         body {
             display: flex;
             flex-direction: column;
@@ -23,42 +22,33 @@
             padding: 20px;
         }
 
-        /* Header */
         h1 {
-            margin-bottom: 20px;
             color: #ba4157;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        /* Dashboard section */
-        .dashboard-container {
+        .container {
             width: 100%;
             max-width: 800px;
-            margin-bottom: 30px;
             background: #fff;
             border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        /* Iframe styling */
         iframe {
             width: 100%;
             height: 500px;
             border: none;
         }
 
-        /* Report Analysis Summary section */
-        .report-container {
-            width: 100%;
-            max-width: 800px;
+        .content-container {
             padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
         }
 
-        .report-container h2 {
+        .content-container h2 {
             color: #ba4157;
             margin-bottom: 10px;
         }
@@ -68,6 +58,24 @@
             line-height: 1.6;
             color: #555;
         }
+
+        .question-section {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .question p {
+            margin: 5px 0 0 15px;
+        }
+
+        .question strong {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -76,28 +84,46 @@
     <h1>Looker Studio Dashboard & Report Summary (<a href="https://llounge.in/" style="text-decoration: none; color: #ba4157;">LLOUNGE</a>)</h1>
 
     <!-- Dashboard Section -->
-    <div class="dashboard-container">
-        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/1247b67f-94c7-4ad4-9271-85ccc1f410ef/page/p_mou4lb6fmd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <div class="container">
+        <iframe src="https://lookerstudio.google.com/embed/reporting/1247b67f-94c7-4ad4-9271-85ccc1f410ef/page/p_mou4lb6fmd" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 
     <!-- Report Analysis Summary Section -->
-    <div class="report-container">
-        <h2>Report Analysis Summary</h2>
+    <div class="container content-container">
+        <h2>Analytical Report:</h2>
         <p class="report-summary">
-            I have created a report of Llounge's web analytics in Looker Studio, focusing on key metrics like item views, add to cart actions, and purchases. The report highlights the user journey, showing significant drop-offs in the funnel between product views and purchases. Llounge, as an Apple-authorized reseller, can use this data to optimize their purchase journey and reduce abandonment rates.
+            The Llounge.in dashboard reveals key insights into user engagement, traffic channels, and product interactions. Most users arrive through Organic Search, and mobile usage is dominant, underlining the need for mobile optimization. High interest in product pages like the iPhone 16 Pro indicates strong user interest, while low purchase conversions suggest potential barriers in the purchase process. Optimizing the checkout experience could improve conversions and user engagement.
         </p>
-        <h3 style="text-align: center;">Key Points</h3>
-            <ul style="text-align: left;">
-                <li>​Users </li>
-                <li>Engagement</li> 
-                <li>Views</li>
-                <li>Channels</li>
-                <li>Location</li>
-                <li>Web Pages</li>
-                <li>Events</li>
-                <li>Ecommerce</li>
-                
-            </ul>
+        <br>
+        <br>
+        <!-- Question and Answer Section -->
+        <h2>Primary Questions for Exploratory Analysis:</h2>
+        <ul class="question-section">
+            <li class="question">
+                <strong>What insights can be drawn from the high number of item views but low purchases?</strong>
+                <p>The report highlights a significant drop-off from item views to actual purchases. This may indicate obstacles during the purchase phase, such as price, lack of financing options, or a complex checkout process. Enhancing the checkout experience or offering promotions could reduce this drop-off.</p>
+            </li>
+            <li class="question">
+                <strong>How effective are the marketing channels in driving engaged sessions?</strong>
+                <p>Organic Search drives most engaged sessions, while channels like Direct and Organic Social show lower session counts. Efforts to boost engagement across these channels could diversify and increase overall user engagement.</p>
+            </li>
+            <li class="question">
+                <strong>What device type is most commonly used to access the website?</strong>
+                <p>Most users (87.9%) access the website via mobile devices, with only 11.5% using desktops. This emphasizes the importance of a mobile-optimized experience.</p>
+            </li>
+            <li class="question">
+                <strong>Which products generate the most interest but have low add-to-cart or purchase actions?</strong>
+                <p>Products like the iPhone 16 Pro and iPhone 13 have high views but low conversions, indicating possible barriers to purchase. Offering discounts or financing could improve conversions for these popular items.</p>
+            </li>
+            <li class="question">
+                <strong>What can be inferred from engagement trends across sessions and events?</strong>
+                <p>High counts of events like ‘page_view’ and ‘session_start’ show good initial engagement, but lower counts on deeper engagement events suggest interest may fade. Implementing features that encourage scrolling or clicking might increase engagement rates.</p>
+            </li>
+            <li class="question">
+                <strong>Which landing pages are most effective in attracting users?</strong>
+                <p>The Apple Authorized Reseller page is the top landing page, suggesting that users are actively searching for authorized Apple products. More content focused on Apple reseller services could attract similar visitors.</p>
+            </li>
+        </ul>
     </div>
 
 </body>
